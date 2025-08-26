@@ -14,31 +14,101 @@ public class Starter implements Directions{
     // The line below creates a Robot that we will refer to as rob
     // Find out what the numbers and direction do!
     // Put rob in a better location for your initials.
-    Robot rob = new Robot(15,2,South,9);
-
+    Robot rob = new Robot(16,10,West,900);
+    World.setDelay(1);
     // Want a second robot?  No prob.  They are cheap :)
     //Robot dude = new Robot(7,5,West,9);
     // examples of commands you can invoke on a Robot
-    rob.move();// move one step in the direction it is facing
+    // move one step in the direction it is facing
 
 
-    // starting the letter R
+    // starting the diamond
     rob.putBeeper();
-    rob.putBeeper();
-    rob.putBeeper();
-    rob.putBeeper();
+    rob.move();
+    rob.turnLeft();
     rob.move();
     rob.putBeeper();
     rob.move();
-    rob.move();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.turnLeft();
     rob.move();
     rob.putBeeper();
     rob.move();
+    rob.turnLeft();
     rob.move();
     rob.putBeeper();
-
-    // done with the line, now on the curve
+    rob.move();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.move();
+    rob.putBeeper();
+    // Puts the first side of the Diamond
+    rob.turnLeft();
+    // Faces proper direction
+    rob.move();
+    rob.turnLeft();
+    rob.move();
+    rob.putBeeper();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.move();
+    rob.turnLeft();
+    rob.move();
+    rob.putBeeper();
+    rob.move();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.move();
+    rob.putBeeper();
+    rob.move();
+    rob.turnLeft();
+    rob.move();
+    rob.putBeeper();
+    // Code for the 2nd side of the Diamond
+    rob.move();
+    rob.turnLeft();
+    rob.move();
+    rob.putBeeper();
+    rob.move();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.move();
+    rob.putBeeper();
+    rob.move();
+    rob.turnLeft();
+    rob.move();
+    rob.putBeeper();
+    rob.move();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.move();
+    rob.putBeeper();
+    //Done with the 3rd side
+    rob.turnLeft();
+    rob.move();
+    rob.turnLeft();
+    rob.move();
+    rob.putBeeper();
+    rob.move();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.move();
+    rob.putBeeper();
+     rob.move();
+    rob.turnLeft();
+    rob.move();
+    rob.putBeeper();
+        // done with the final side, now we have a diamond.
+    
     // rob.turnLeft();
-
+    
+    
   }
 }
