@@ -23,92 +23,55 @@ public class Starter implements Directions{
 
 
     // starting the diamond
-    rob.putBeeper();
-    rob.move();
+    //First Loop
+    for (int i = 0; i < 4; i++)
+    {
+      rob.putBeeper();
+      rob.move();
+      rob.turnLeft();
+      rob.move();
+      rob.turnLeft();
+      rob.turnLeft();
+      rob.turnLeft();
+    }
+    // Resetting to face proper direction
     rob.turnLeft();
-    rob.move();
-    rob.putBeeper();
-    rob.move();
+    //Second Loop
+       for (int i = 0; i < 4; i++)
+    {
+      rob.putBeeper();
+      rob.move();
+      rob.turnLeft();
+      rob.move();
+      rob.turnLeft();
+      rob.turnLeft();
+      rob.turnLeft();
+    }
+    // Resetting to face proper direction
     rob.turnLeft();
+    //Third Loop
+       for (int i = 0; i < 4; i++)
+    {
+      rob.putBeeper();
+      rob.move();
+      rob.turnLeft();
+      rob.move();
+      rob.turnLeft();
+      rob.turnLeft();
+      rob.turnLeft();
+    }
+    // Resetting to face proper direction
     rob.turnLeft();
-    rob.turnLeft();
-    rob.move();
-    rob.putBeeper();
-    rob.move();
-    rob.turnLeft();
-    rob.move();
-    rob.putBeeper();
-    rob.move();
-    rob.turnLeft();
-    rob.turnLeft();
-    rob.turnLeft();
-    rob.move();
-    rob.putBeeper();
-    // Puts the first side of the Diamond
-    rob.turnLeft();
-    // Faces proper direction
-    rob.move();
-    rob.turnLeft();
-    rob.move();
-    rob.putBeeper();
-    rob.turnLeft();
-    rob.turnLeft();
-    rob.turnLeft();
-    rob.move();
-    rob.turnLeft();
-    rob.move();
-    rob.putBeeper();
-    rob.move();
-    rob.turnLeft();
-    rob.turnLeft();
-    rob.turnLeft();
-    rob.move();
-    rob.putBeeper();
-    rob.move();
-    rob.turnLeft();
-    rob.move();
-    rob.putBeeper();
-    // Code for the 2nd side of the Diamond
-    rob.move();
-    rob.turnLeft();
-    rob.move();
-    rob.putBeeper();
-    rob.move();
-    rob.turnLeft();
-    rob.turnLeft();
-    rob.turnLeft();
-    rob.move();
-    rob.putBeeper();
-    rob.move();
-    rob.turnLeft();
-    rob.move();
-    rob.putBeeper();
-    rob.move();
-    rob.turnLeft();
-    rob.turnLeft();
-    rob.turnLeft();
-    rob.move();
-    rob.putBeeper();
-    //Done with the 3rd side
-    rob.turnLeft();
-    rob.move();
-    rob.turnLeft();
-    rob.move();
-    rob.putBeeper();
-    rob.move();
-    rob.turnLeft();
-    rob.turnLeft();
-    rob.turnLeft();
-    rob.move();
-    rob.putBeeper();
-     rob.move();
-    rob.turnLeft();
-    rob.move();
-    rob.putBeeper();
-        // done with the final side, now we have a diamond.
-    
-    // rob.turnLeft();
-    
-    
+    //Fourth Loop
+       for (int i = 0; i < 4; i++)
+    {
+      rob.putBeeper();
+      rob.move();
+      rob.turnLeft();
+      rob.move();
+      rob.turnLeft();
+      rob.turnLeft();
+      rob.turnLeft();
+    }
   }
 }
