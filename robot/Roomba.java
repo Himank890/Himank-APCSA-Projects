@@ -38,8 +38,10 @@ public class Roomba implements Directions {
 		// the line below causes a null pointer exception
 		// what is that and why are we getting it?
 		roomba.move();
-
-
+        // This will be the while loop
+		while (i >= 1) {
+			roomba.pickBeeper();
+		}
 		int totalBeepers = 0; // Need to move this somewhere else.
         // This method should return the total number of beepers cleaned up.
 		return totalBeepers;
