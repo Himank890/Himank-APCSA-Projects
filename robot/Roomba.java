@@ -97,7 +97,9 @@ public class Roomba implements Directions {
 		
         // This method should return the total number of beepers cleaned up.
 		int totalBeepers = 0; // Need to move this somewhere else.
-		//while (roomba.pickBeeper();)
+		//while ((roomba.pickBeeper()) = true); {
+		//	int + 1
+		//}
 		return totalBeepers;
 	}
 }
