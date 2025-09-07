@@ -34,33 +34,41 @@ public class Roomba implements Directions {
 		 * and cleans up all piles of beepers. Think about ways you can break this
 		 * large, complex task into smaller, easier to solve problems.
 		 */
-
+		while (roomba.nextToABeeper()) {
+			roomba.pickBeeper();
+		}
+		//I think I can for loop from here *
+		roomba.move();
+		roomba.move();
+		roomba.turnLeft();
+		roomba.move();
+		while (roomba.nextToABeeper()) {
+			roomba.pickBeeper();
+		}
+		roomba.move();
+		while (roomba.nextToABeeper()) {
+			roomba.pickBeeper();
+		}
+		roomba.move();
+		roomba.move();
+		roomba.turnLeft();
+		roomba.move();
+		while (roomba.nextToABeeper()) {
+			roomba.pickBeeper();
+		}
+		roomba.move();
+		while (roomba.nextToABeeper()) {
+			roomba.pickBeeper();
+		}
+		//I think I can end a for loop here
 		// the line below causes a null pointer exception
 		// what is that and why are we getting it?
-        // This will be the while loop
-		while (roomba.nextToABeeper()) {
-			roomba.pickBeeper();
-		}
-		roomba.move();
-		roomba.move();
-		roomba.turnLeft();
-		roomba.move();
-		while (roomba.nextToABeeper()) {
-			roomba.pickBeeper();
-		}
-		roomba.move();
-		while (roomba.nextToABeeper()) {
-			roomba.pickBeeper();
-		}
-		roomba.move();
-		roomba.move();
-		roomba.turnLeft();
-		roomba.move();
-		while (roomba.nextToABeeper()) {
-			roomba.pickBeeper();
-		}
-		int totalBeepers = 0; // Need to move this somewhere else.
+        
+		
+		
         // This method should return the total number of beepers cleaned up.
+		int totalBeepers = 0; // Need to move this somewhere else.
+		//while (roomba.pickBeeper();)
 		return totalBeepers;
 	}
 }
