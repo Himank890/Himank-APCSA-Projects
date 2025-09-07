@@ -67,6 +67,17 @@ public class Roomba implements Directions {
 		while (roomba.nextToABeeper()) {
 			roomba.pickBeeper();
 		}
+		roomba.move();
+		roomba.turnLeft();
+		roomba.turnLeft();
+		roomba.turnLeft();
+		roomba.move();
+		while (roomba.nextToABeeper()) {
+			roomba.pickBeeper();
+		}
+		roomba.turnLeft();
+		roomba.turnLeft();
+		roomba.turnLeft();
 		//I think I can end a for loop here
 		// the line below causes a null pointer exception
 		// what is that and why are we getting it?
