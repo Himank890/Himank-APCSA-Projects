@@ -24,8 +24,8 @@ public class Roomba implements Directions {
 	public int cleanRoom(String worldName, int startX, int startY) {
 
 		// A new Robot should be constructed and assigned to the global (instance) variable named roomba that is declared above.
-        // Make sure it starts at startX and startY location.
-
+        // Make sure it starts at startX and startY location
+		Robot roomba = new Robot(9,7,South,0);
 		World.readWorld(worldName);
 		World.setVisible(true);
 
@@ -37,9 +37,15 @@ public class Roomba implements Directions {
 
 		// the line below causes a null pointer exception
 		// what is that and why are we getting it?
-		roomba.move();
         // This will be the while loop
-		while (i >= 1) {
+		while (roomba.nextToABeeper()) {
+			roomba.pickBeeper();
+		}
+		roomba.move();
+		roomba.move();
+		roomba.turnLeft();
+		roomba.move();
+		while (roomba.nextToABeeper()) {
 			roomba.pickBeeper();
 		}
 		int totalBeepers = 0; // Need to move this somewhere else.
