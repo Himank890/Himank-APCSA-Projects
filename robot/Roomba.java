@@ -25,71 +25,23 @@ public class Roomba implements Directions {
 
 		// A new Robot should be constructed and assigned to the global (instance) variable named roomba that is declared above.
         // Make sure it starts at startX and startY location
-		Robot roomba = new Robot(9,7,South,0);
+		Robot roomba = new Robot(7,6,East,0);
 		World.readWorld(worldName);
 		World.setVisible(true);
-		World.setDelay(1);
+		//World.setDelay(1);
 
 		/** This section will have all the logic that takes the Robot to every location
 		 * and cleans up all piles of beepers. Think about ways you can break this
 		 * large, complex task into smaller, easier to solve problems.
 		 */
-		while (roomba.nextToABeeper()) {
-			roomba.pickBeeper();
+		while (roomba.frontIsClear()) {
+			
+			while (roomba.nextToABeeper()) {
+				roomba.pickBeeper();
+			}
+			roomba.move();
 		}
-		//I think I can for loop from here *
-		roomba.move();
-		roomba.move();
-		roomba.turnLeft();
-		roomba.move();
-		while (roomba.nextToABeeper()) {
-			roomba.pickBeeper();
-		}
-		roomba.move();
-		while (roomba.nextToABeeper()) {
-			roomba.pickBeeper();
-		}
-		roomba.move();
-		roomba.move();
-		roomba.turnLeft();
-		roomba.move();
-		while (roomba.nextToABeeper()) {
-			roomba.pickBeeper();
-		}
-		roomba.move();
-		while (roomba.nextToABeeper()) {
-			roomba.pickBeeper();
-		}
-		roomba.move();
-		roomba.turnLeft();
-		roomba.move();
-		roomba.move();
-		while (roomba.nextToABeeper()) {
-			roomba.pickBeeper();
-		}
-		roomba.move();
-		roomba.turnLeft();
-		roomba.turnLeft();
-		roomba.turnLeft();
-		roomba.move();
-		while (roomba.nextToABeeper()) {
-			roomba.pickBeeper();
-		}
-		roomba.turnLeft();
-		roomba.turnLeft();
-		roomba.turnLeft();
-		roomba.move();
-		roomba.move();
-		while (roomba.nextToABeeper()) {
-			roomba.pickBeeper();
-		}
-		roomba.move();
-		roomba.move();
-		roomba.move();
-		while (roomba.nextToABeeper()) {
-			roomba.pickBeeper();
-		}
-		//I think I can end a for loop here
+		
 		// the line below causes a null pointer exception
 		// what is that and why are we getting it?
         
