@@ -28,7 +28,7 @@ public class Roomba implements Directions {
 		Robot roomba = new Robot(7,6,East,0);
 		World.readWorld(worldName);
 		World.setVisible(true);
-		//World.setDelay(1);
+		World.setDelay(1);
 
 		/** This section will have all the logic that takes the Robot to every location
 		 * and cleans up all piles of beepers. Think about ways you can break this
@@ -40,8 +40,24 @@ public class Roomba implements Directions {
 				roomba.pickBeeper();
 			}
 			roomba.move();
+
+			if(!roomba.frontIsClear()) {
+				if(roomba.facingEast()) {
+					roomba.turnLeft();
+					roomba.move();
+					roomba.turnLeft();
+				}
+				else {
+					roomba.turnLeft();
+					roomba.turnLeft();
+					roomba.turnLeft();
+					roomba.move();
+					roomba.turnLeft();
+					roomba.turnLeft();
+					roomba.turnLeft();
+				}
+			}
 		}
-		
 		// the line below causes a null pointer exception
 		// what is that and why are we getting it?
         
@@ -54,4 +70,4 @@ public class Roomba implements Directions {
 		//}
 		return totalBeepers;
 	}
-}
+	}
