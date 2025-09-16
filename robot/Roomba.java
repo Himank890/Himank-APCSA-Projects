@@ -18,7 +18,7 @@ public class Roomba implements Directions {
 	// You will need to add many variables!!
 // This method should return the total number of beepers cleaned up.
 	int totalBeepers = 0; // Need to move this somewhere else.
-	int totalSteps = 1;
+	int totalSteps = 0;
 	int pileSize = 0;
 	int largestPile = 0;
 	int largestPileX = 0;
@@ -32,7 +32,7 @@ public class Roomba implements Directions {
 		Robot roomba = new Robot(7,6,East,0);
 		World.readWorld(worldName);
 		World.setVisible(true);
-		World.setDelay(5);
+		World.setDelay(1);
 
 		/** This section will have all the logic that takes the Robot to every location
 		 * and cleans up all piles of beepers. Think about ways you can break this
@@ -89,6 +89,9 @@ public class Roomba implements Directions {
 		System.out.println("The largest pile is " + largestPile);
 		System.out.println("The largest pile is located at (" + largestPileX + "," + largestPileY + ")");
 		System.out.println("The amount of piles is "+ pileAmount);
+		System.out.println("Total area is "+ totalSteps);
+		System.out.println("Average pile size is "+ (double)totalBeepers/pileAmount);
+		System.out.println("Percent dirty is "+ (double)100*totalBeepers/totalSteps + "%");
 		System.out.println("Total area is "+ totalSteps);
 		return totalBeepers;
 	}
