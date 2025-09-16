@@ -23,7 +23,7 @@ public class Roomba implements Directions {
 	int largestPile = 0;
 	int largestPileX = 0;
 	int largestPileY = 0;
-	int pileAmount = 0;
+	int pileAmount = 1;
 
 	public int cleanRoom(String worldName, int startX, int startY) {
 
@@ -44,7 +44,7 @@ public class Roomba implements Directions {
 				largestPileX = (roomba.avenue());
 				largestPileY = (roomba.street());
 				}
-			if (pileSize > 1) {
+			if (pileSize > 0) {
 				pileAmount++;
 			}
 			if (roomba.frontIsClear()) {
