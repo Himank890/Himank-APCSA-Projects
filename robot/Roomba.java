@@ -39,7 +39,7 @@ public class Roomba implements Directions {
 		 * large, complex task into smaller, easier to solve problems.
 		 */
 		while (roomba.frontIsClear()) {
-			if (pileSize >= 1) {
+			if (pileSize > 0) {
 				pileAmount++;
 			}
 			if (pileSize >= largestPile) {
@@ -91,7 +91,7 @@ public class Roomba implements Directions {
 		System.out.println("The amount of piles is "+ pileAmount);
 		System.out.println("Total area is "+ totalSteps);
 		System.out.println("Average pile size is "+ (double)totalBeepers/pileAmount);
-		System.out.println("Percent dirty is "+ (double)100*totalBeepers/totalSteps + "%");
+		System.out.println("Percent dirty is "+ (double)100*pileAmount/totalSteps + "%");
 		System.out.println("Total area is "+ totalSteps);
 		return totalBeepers;
 	}
