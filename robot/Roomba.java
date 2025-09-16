@@ -32,26 +32,26 @@ public class Roomba implements Directions {
 		Robot roomba = new Robot(7,6,East,0);
 		World.readWorld(worldName);
 		World.setVisible(true);
-		World.setDelay(1);
+		//World.setDelay(5);
 
 		/** This section will have all the logic that takes the Robot to every location
 		 * and cleans up all piles of beepers. Think about ways you can break this
 		 * large, complex task into smaller, easier to solve problems.
 		 */
 		while (roomba.frontIsClear()) {
-			
-			while (roomba.nextToABeeper()) {
-				roomba.pickBeeper();
-				totalBeepers++;
-				pileSize++;
-				if (pileSize > largestPile) {
+			if (pileSize > largestPile) {
 				largestPile++;
 				largestPileX = (roomba.avenue());
 				largestPileY = (roomba.street());
 				}
-				if (roomba.frontIsClear()) {
-					pileSize = 0;
-				}
+			if (roomba.frontIsClear()) {
+				pileSize = 0;
+			}
+			
+			while (roomba.nextToABeeper()) {
+				totalBeepers++;
+				pileSize++;
+				roomba.pickBeeper();
 			}
 			roomba.move();
 			totalSteps++;
@@ -85,8 +85,7 @@ public class Roomba implements Directions {
 		//}
 		System.out.println("The largest pile is " + largestPile);
 		System.out.println("The largest pile is located at (" + largestPileX + "," + largestPileY + ")");
-		System.out.println("Total area is "+ totalSteps);
-		System.out.println("Total area is "+ totalSteps);
+		System.out.println("The amount of piles is "+ pileAmount);
 		System.out.println("Total area is "+ totalSteps);
 		return totalBeepers;
 	}
