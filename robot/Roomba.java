@@ -39,7 +39,7 @@ public class Roomba implements Directions {
 		 * large, complex task into smaller, easier to solve problems.
 		 */
 		while (roomba.frontIsClear()) {
-			if (pileSize > 0) {
+			if (pileSize >= 1) {
 				pileAmount++;
 			}
 			if (pileSize >= largestPile) {
