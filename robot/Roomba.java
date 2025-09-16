@@ -32,7 +32,7 @@ public class Roomba implements Directions {
 		Robot roomba = new Robot(7,6,East,0);
 		World.readWorld(worldName);
 		World.setVisible(true);
-		//World.setDelay(5);
+		World.setDelay(5);
 
 		/** This section will have all the logic that takes the Robot to every location
 		 * and cleans up all piles of beepers. Think about ways you can break this
@@ -44,6 +44,9 @@ public class Roomba implements Directions {
 				largestPileX = (roomba.avenue());
 				largestPileY = (roomba.street());
 				}
+			if (pileSize > 1) {
+				pileAmount++;
+			}
 			if (roomba.frontIsClear()) {
 				pileSize = 0;
 			}
