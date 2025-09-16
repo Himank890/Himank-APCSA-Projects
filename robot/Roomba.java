@@ -15,13 +15,15 @@ public class Roomba implements Directions {
 
 	}
 
-	// declared here so it is visible in all the methods!
-	private Robot roomba;
-	
-
 	// You will need to add many variables!!
 // This method should return the total number of beepers cleaned up.
 	int totalBeepers = 0; // Need to move this somewhere else.
+	int totalSteps = 1;
+	int pileSize = 0;
+	int largestPile = 0;
+	int largestPileX = 0;
+	int largestPileY = 0;
+	int pileAmount = 0;
 
 	public int cleanRoom(String worldName, int startX, int startY) {
 
@@ -39,22 +41,33 @@ public class Roomba implements Directions {
 		while (roomba.frontIsClear()) {
 			
 			while (roomba.nextToABeeper()) {
-				totalBeepers++;
 				roomba.pickBeeper();
+				totalBeepers++;
+				pileSize++;
+				if (pileSize > largestPile) {
+				largestPile++;
+				largestPileX = (roomba.avenue());
+				largestPileY = (roomba.street());
+				}
+				if (roomba.frontIsClear()) {
+					pileSize = 0;
+				}
 			}
 			roomba.move();
-
+			totalSteps++;
 			if(!roomba.frontIsClear()) {
 				if(roomba.facingEast()) {
 					roomba.turnLeft();
-					roomba.move();
+						roomba.move();
+						totalSteps++;
 					roomba.turnLeft();
 				}
 				else {
 					roomba.turnLeft();
 					roomba.turnLeft();
 					roomba.turnLeft();
-					roomba.move();
+						roomba.move();
+						totalSteps++;
 					roomba.turnLeft();
 					roomba.turnLeft();
 					roomba.turnLeft();
@@ -70,6 +83,11 @@ public class Roomba implements Directions {
 		//while ((roomba.pickBeeper()) = true); {
 		//	int + 1
 		//}
+		System.out.println("The largest pile is " + largestPile);
+		System.out.println("The largest pile is located at (" + largestPileX + "," + largestPileY + ")");
+		System.out.println("Total area is "+ totalSteps);
+		System.out.println("Total area is "+ totalSteps);
+		System.out.println("Total area is "+ totalSteps);
 		return totalBeepers;
 	}
 	}
