@@ -7,7 +7,7 @@ public class Roomba implements Directions {
 	// Main method to make this self-contained
 	public static void main(String[] args) {
 		// LEAVE THIS ALONE!!!!!!
-		String worldName = "robot/basicRoom.wld";
+		String worldName = "robot/FinalTestWorld.wld";
 
 		Roomba cleaner = new Roomba();
 		int totalBeepers = cleaner.cleanRoom(worldName, 7, 6);
@@ -29,10 +29,18 @@ public class Roomba implements Directions {
 
 		// A new Robot should be constructed and assigned to the global (instance) variable named roomba that is declared above.
         // Make sure it starts at startX and startY location
-		Robot roomba = new Robot(7,6,East,0);
+		//basic room coordinates
+		//Robot roomba = new Robot(7,6,East,0);
+		//TestingRoom1 coordinates
+		//Robot roomba = new Robot(25,11,East,0);
+		//TestingRoom2 coordinates
+		//Robot roomba = new Robot(5,6,East,0);
+		//FinalTestWorld coordinates
+		Robot roomba = new Robot(26,101,East,0);
+
 		World.readWorld(worldName);
 		World.setVisible(true);
-		World.setDelay(1);
+		World.setDelay(0);
 
 		/** This section will have all the logic that takes the Robot to every location
 		 * and cleans up all piles of beepers. Think about ways you can break this
@@ -59,13 +67,13 @@ public class Roomba implements Directions {
 			roomba.move();
 			totalSteps++;
 			if(!roomba.frontIsClear()) {
-				if (roomba.nextToABeeper()) {
-					pileAmount++;
-				}
 				while (roomba.nextToABeeper()) {
 				totalBeepers++;
 				pileSize++;
 				roomba.pickBeeper();
+				}
+				if (roomba.nextToABeeper()) {
+					pileAmount++;
 				}
 				if(roomba.facingEast()) {
 					roomba.turnLeft();
@@ -97,9 +105,9 @@ public class Roomba implements Directions {
 		System.out.println("The largest pile is " + largestPile);
 		System.out.println("The largest pile is located at Street " + largestPileX + ", Avenue " + largestPileY);
 		System.out.println("The amount of piles is "+ pileAmount);
-		System.out.println("Total area is "+ totalSteps);
+		System.out.println("Total area is "+ totalSteps + " square units");
 		System.out.println("Average pile size is "+ (double)totalBeepers/pileAmount);
-		System.out.println("Percent dirty is "+ (double)100*pileAmount/totalSteps + "%");
+		System.out.println("Percent dirty is "+ (double)pileAmount/totalSteps + "%");
 		System.out.println("Total area is "+ totalSteps);
 		return totalBeepers;
 	}
