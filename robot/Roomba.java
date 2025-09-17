@@ -42,11 +42,6 @@ public class Roomba implements Directions {
 			if (pileSize > 0) {
 				pileAmount++;
 			}
-			if (pileSize >= largestPile) {
-				largestPile = pileSize;
-				largestPileX = (roomba.avenue());
-				largestPileY = (roomba.street());
-				}
 			if (roomba.frontIsClear()) {
 				pileSize = 0;
 			}
@@ -55,6 +50,11 @@ public class Roomba implements Directions {
 				totalBeepers++;
 				pileSize++;
 				roomba.pickBeeper();
+			}
+			if (pileSize >= largestPile) {
+				largestPile = pileSize;
+				largestPileX = (roomba.avenue());
+				largestPileY = (roomba.street());
 			}
 			roomba.move();
 			totalSteps++;
@@ -95,7 +95,7 @@ public class Roomba implements Directions {
 		//	int + 1
 		//}
 		System.out.println("The largest pile is " + largestPile);
-		System.out.println("The largest pile is located at (" + largestPileX + "," + largestPileY + ")");
+		System.out.println("The largest pile is located at Street " + largestPileX + ", Avenue " + largestPileY);
 		System.out.println("The amount of piles is "+ pileAmount);
 		System.out.println("Total area is "+ totalSteps);
 		System.out.println("Average pile size is "+ (double)totalBeepers/pileAmount);
