@@ -43,7 +43,7 @@ public class Roomba implements Directions {
 				pileAmount++;
 			}
 			if (pileSize >= largestPile) {
-				largestPile++;
+				largestPile = pileSize;
 				largestPileX = (roomba.avenue());
 				largestPileY = (roomba.street());
 				}
@@ -59,6 +59,14 @@ public class Roomba implements Directions {
 			roomba.move();
 			totalSteps++;
 			if(!roomba.frontIsClear()) {
+				if (roomba.nextToABeeper()) {
+					pileAmount++;
+				}
+				while (roomba.nextToABeeper()) {
+				totalBeepers++;
+				pileSize++;
+				roomba.pickBeeper();
+				}
 				if(roomba.facingEast()) {
 					roomba.turnLeft();
 						roomba.move();
