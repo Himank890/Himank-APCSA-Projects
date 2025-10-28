@@ -65,6 +65,12 @@ public class Book {
             // Scanner can open a file on a URL like this:
             // Scanner(bookUrl.openStream())
             // use: text.add(line) to add a line to the book.
+            Scanner input = new Scanner(bookUrl.openStream());
+            while (input.hasNextLine())
+            {
+                text.add(input.nextLine());
+            }
+            input.close();
         } catch (IOException ex) {
             ex.printStackTrace();
         }

@@ -16,7 +16,11 @@ public class PigLatinTranslator {
         System.out.println("  -> translate('" + input + "')");
 
         String result = "";
-
+        String vowels = "aeiouy";
+        if (vowels.indexOf(input) != 1)
+        {
+            System.out.println(aaaa));
+        }
         // TODO: translate a string input, store in result.
         // The input to this function could be any English string.
         // It may be made up of many words.
@@ -27,14 +31,14 @@ public class PigLatinTranslator {
     }
 
     private static String translateWord(String input) {
-        System.out.println("  -> translateWord('" + input + "')");
+        System.out.println("translateWord: '" + input + "'");
 
-        String result = "";
+        String result = input + "ay";
 
         // TODO: Replace this code to correctly translate a single word.
         // Start here first!
+        
         // This is the first place to work.
-        result = input; // delete this line
 
         return result;
     }
