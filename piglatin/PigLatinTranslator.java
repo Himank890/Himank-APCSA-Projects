@@ -19,7 +19,7 @@ public class PigLatinTranslator {
         String vowels = "aeiouy";
         if (vowels.indexOf(input) != 1)
         {
-            System.out.println(aaaa));
+            System.out.println("aaaa");
         }
         // TODO: translate a string input, store in result.
         // The input to this function could be any English string.
