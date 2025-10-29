@@ -15,33 +15,54 @@ public class PigLatinTranslator {
     public static String translate(String input) {
         System.out.println("  -> translate('" + input + "')");
 
-        String result = "";
-        String vowels = "aeiouy";
-        if (vowels.indexOf(input) != 1)
+        String vowels = "aeiouyAEIOUY";
+        int firstVowelIndex = -1;
+        
+        for(int i = 0; i < input.length(); i++)
         {
-            System.out.println("aaaa");
+            if (vowels.indexOf(input.charAt(i)) != -1)
+            {
+                firstVowelIndex = i;
+                break;
+            }
         }
+
+        if (firstVowelIndex == -1)
+        {
+            return input + "ay";
+        }
+        
+        if (firstVowelIndex == 0)
+        {
+            return input + "ay";
+        }
+
+        String start = input.substring(firstVowelIndex);
+        String end = input.substring(0, firstVowelIndex);
+        return start + end + "ay";
+
         // TODO: translate a string input, store in result.
         // The input to this function could be any English string.
         // It may be made up of many words.
         // This method must call translateWord once for each word in the string.
-        result = translateWord(input);
+        //String result = "";
+        //result = translateWord(input);
 
-        return result;
+       // return result;
     }
 
-    private static String translateWord(String input) {
-        System.out.println("translateWord: '" + input + "'");
+     //private static String translateWord(String input) {
+        //System.out.println("translateWord: '" + input + "'");
 
-        String result = input + "ay";
+        //String result = input + "ay";
 
         // TODO: Replace this code to correctly translate a single word.
         // Start here first!
         
         // This is the first place to work.
 
-        return result;
-    }
+        //return result;
+    //}
 
     // Add additonal private methods here.
     // For example, I had one like this:
