@@ -12,8 +12,22 @@ public class PigLatinTranslator {
         return translatedBook;
     }
 
+
     public static String translate(String input) {
+        if (input == null || input.isEmpty())
+        {
+            return input;
+        }
         System.out.println("  -> translate('" + input + "')");
+
+        String punctuation = "";
+        if (!Character.isLetter(input.charAt(input.length()-1)))
+        {
+            punctuation = String.valueOf(input.charAt(input.length()-1));
+            input = input.substring(0, input.length()-1);
+        }
+
+        input = Character.toLowerCase(input.charAt(0)) + input.substring(1);
 
         String vowels = "aeiouyAEIOUY";
         int firstVowelIndex = -1;
@@ -29,17 +43,23 @@ public class PigLatinTranslator {
 
         if (firstVowelIndex == -1)
         {
-            return input + "ay";
+            input = input + "ay";
         }
         
         if (firstVowelIndex == 0)
         {
-            return input + "ay";
+            input = input + "ay";
         }
+        else
+        {
+            String start = input.substring(firstVowelIndex);
+            String end = input.substring(0, firstVowelIndex);
+            input = start + end + "ay";
+        }
+        input = Character.toUpperCase(input.charAt(0)) + input.substring(1);
+        input += punctuation;
 
-        String start = input.substring(firstVowelIndex);
-        String end = input.substring(0, firstVowelIndex);
-        return start + end + "ay";
+        return input;
 
         // TODO: translate a string input, store in result.
         // The input to this function could be any English string.
@@ -50,11 +70,6 @@ public class PigLatinTranslator {
 
        // return result;
     }
-
-     //private static String translateWord(String input) {
-        //System.out.println("translateWord: '" + input + "'");
-
-        //String result = input + "ay";
 
         // TODO: Replace this code to correctly translate a single word.
         // Start here first!
