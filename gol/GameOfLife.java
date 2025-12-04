@@ -1,5 +1,5 @@
 package gol;
-
+//gol has been pulled and synced
 import java.util.Arrays;
 
 public class GameOfLife implements Board {
