@@ -3,7 +3,7 @@ package sorting;
 public class SelectionSort implements Sorter {
 
     public void sort(int[] input) {
-        System.out.println("Selection Sort!!!");
+        //System.out.println("Selection Sort!!!");
 
         for (int i = 0; i < input.length - 1; i++) {
             int min = i;
