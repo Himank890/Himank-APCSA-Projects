@@ -13,11 +13,11 @@ public class Main {
         //     of InsertionSort and Selection sort continue to work.
         //  4. Increase the loop count for TestSuite to get better performance results.
 
-        int[] testInput = randomArray(5);
+        int[] testInput = randomArray(100);
 
         // Increase the loop count to get better results once it works.
         // TestSuite.run(testInput, 10000);
-        TestSuite.run(testInput, 100);
+        TestSuite.run(testInput, 10000);
     }
 
     public static int[] randomArray(int length)
