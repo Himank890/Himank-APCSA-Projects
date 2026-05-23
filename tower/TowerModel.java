@@ -41,6 +41,8 @@ public class TowerModel {
     // get the total number of disks
     public int height()
     {
+        this.moveCounter = 0;
+        this.printCounter = 0;
         return towerHeight;
     }
 
@@ -86,6 +88,8 @@ public class TowerModel {
 
     public int getHeight()
     {
+        this.moveCounter = 0;
+        this.printCounter = 0;
         return towerHeight;
     }
 }
