@@ -30,12 +30,22 @@ public class IrregularPolygon {
 
             totalPerimeter += current.distance(next)
         }
-    }
+    }   
 
     public double area() {
         // TODO: Calculate the area.
-        Double area = 0.0;
-        return area;
+        Double sum = 0.0;
+        int n = vertices.size();
+
+        if (n < 3) return 0.0;
+
+        for (int i = 0; i < n; i++) {
+            Point2D.Double current = vertices.get(i);
+            Point2D.Double next = vertices.get((i+1) % n);
+
+            sum += (current.getX() * next.getY()) - (current.getY() * next.getX());
+        }
+        return Math.abs(sum) * 0.5;
     }
 
     public void draw()
