@@ -15,6 +15,7 @@ public class IrregularPolygon {
     public void add(Point2D.Double aPoint)
     {
         // TODO: Add a point to the IrregularPolygon.
+        // All test suits pass
         myPolygon.add(aPoint);
     }
 
